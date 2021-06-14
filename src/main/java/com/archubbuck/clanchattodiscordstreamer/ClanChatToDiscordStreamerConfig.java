@@ -16,4 +16,11 @@ public interface ClanChatToDiscordStreamerConfig extends Config
 	{
 		return "Hello";
 	}
+
+	@ConfigItem(
+			keyName = "webhook",
+			name = "Webhook",
+			description = "A Discord webhook or private endpoint"
+	)
+	default String webhook() { return ""; }
 }
