@@ -1,13 +1,13 @@
-package com.archubbuck.clanchattodiscordstreamer;
+package com.archubbuck.chatstreamer;
 
 import net.runelite.client.RuneLite;
 import net.runelite.client.externalplugins.ExternalPluginManager;
 
-public class ClanChatToDiscordStreamerPluginTest
+public class ChatStreamerPluginTest
 {
 	public static void main(String[] args) throws Exception
 	{
-		ExternalPluginManager.loadBuiltin(ClanChatToDiscordStreamerPlugin.class);
+		ExternalPluginManager.loadBuiltin(ChatStreamerPlugin.class);
 		RuneLite.main(args);
 	}
 }

@@ -1,2 +1,2 @@
-# ClanChatToDiscordStreamer
-Streams messages from a clan chat to Discord.
+# Chat Streamer
+Streams chat messages to external services.
