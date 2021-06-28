@@ -11,6 +11,7 @@ import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
+import net.runelite.client.util.Text;
 import net.runelite.http.api.RuneLiteAPI;
 import okhttp3.*;
 
@@ -57,17 +58,17 @@ public class ChatStreamerPlugin extends Plugin {
         }
 
         if (chatMessage.getType().equals(ChatMessageType.FRIENDSCHAT) && (!config.friendsChatName().isEmpty() &&
-                !chatMessage.getSender().equalsIgnoreCase(config.friendsChatName()))) {
+                !Text.standardize(chatMessage.getSender()).equalsIgnoreCase(Text.standardize(config.friendsChatName())))) {
             return;
         }
 
         if (chatMessage.getType().equals(ChatMessageType.CLAN_CHAT) && (!config.clanChatName().isEmpty() &&
-                !chatMessage.getSender().equalsIgnoreCase(config.clanChatName()))) {
+                !Text.standardize(chatMessage.getSender()).equalsIgnoreCase(Text.standardize(config.clanChatName())))) {
             return;
         }
 
         if (chatMessage.getType().equals(ChatMessageType.CLAN_GUEST_CHAT) && (!config.clanGuestChatName().isEmpty() &&
-                !chatMessage.getSender().equalsIgnoreCase(config.clanGuestChatName()))) {
+                !Text.standardize(chatMessage.getSender()).equalsIgnoreCase(Text.standardize(config.clanGuestChatName())))) {
             return;
         }
 
